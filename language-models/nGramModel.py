@@ -31,7 +31,7 @@ class NGramModel(object):
                   NGramModel object. This function is done for you.
         """
         return 'This is an NGramModel object'
-
+n
     def prepData(self, text):
         """
         Requires: text is a list of lists of strings
