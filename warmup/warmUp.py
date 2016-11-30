@@ -10,7 +10,7 @@ def returnDictionary(D):
     Modifies: Nothing
     Effects:  Returns the input dictionary D unchanged.
     """
-    return
+    return D 
 
 def keyInDict(D, K):
     """
@@ -18,7 +18,10 @@ def keyInDict(D, K):
     Modifies: Nothing
     Effects:  Returns True if and only if the key K is already in D.
     """
-    return
+    if K in D:
+    return True
+    else:
+    return False
 
 def returnKeyVal(D, K):
     """
@@ -26,7 +29,7 @@ def returnKeyVal(D, K):
     Modifies: Nothing
     Effects:  Returns the value associated with K in the dictionary D.
     """
-    return
+    return D[K]
 
 def setKeyVal(D, K, V):
     """
@@ -35,7 +38,8 @@ def setKeyVal(D, K, V):
     Effects:  Sets the value associated with the key K in the dictionary D
               to be the value V. Returns the dictionary D.
     """
-    return
+    D[K] = V
+    return D
 
 def setKeyValList(D, K, V1, V2, V3, V4):
     """
@@ -45,7 +49,8 @@ def setKeyValList(D, K, V1, V2, V3, V4):
               the input dictionary D, to be a list composed of V1 through
               V4, in that order. Returns the dictionary D.
     """
-    return
+    D[K] = [V1, V2, V3, V4]
+    return D
 
 def asciiAssociate():
     """
@@ -56,7 +61,12 @@ def asciiAssociate():
               the associated ascii values from 97 to 122. Returns the
               dictionary asciiDict.
     """
-    return
+    asciiDict = {'a':97, 'b':98, 'c':99, 'd':100, 'e':101, 'f':102, 
+                 'g':103, 'h':104, 'i':105, 'j':106, 'k':107, 'l':108, 
+                 'm':109, 'n':110, 'o':111, 'p':112, 'q':113, 'r':114, 
+                 's':115, 't':116, 'u':117, 'v':118, 'w':119, 'x':120, 
+                 'y':121, 'z':122}
+    return asciiDict
 
 def getColor(favoriteColors, name):
     """
@@ -66,7 +76,7 @@ def getColor(favoriteColors, name):
     Effects:  Returns the first element in the list associated with the
               key "name" in the input dictionary favoriteColors.
     """
-    return
+    return favoriteColors[name][0]
 
 def translate(vocab, word, language):
     """
@@ -78,7 +88,7 @@ def translate(vocab, word, language):
               Given the input dictionary, this function returns the
               value associated with the input word and language.
     """
-    return
+    return vocab[word][language]
 
 def nestedDictionary():
     """
@@ -88,7 +98,11 @@ def nestedDictionary():
               lowercase characters from a to z, and each key has a value
               of an empty dictionary. Returns the new dictionary D.
     """
-    return
+    D = {'a':{}, 'b':{}, 'c'{}, 'd'{}, 'e':{}, 'f':{}, 'g':{}, 'h':{}, 
+         'i':{}, 'j':{}, 'k':{}, 'l':{}, 'm':{}, 'n':{}, 'o':{}, 'p':{}, 
+         'q':{}, 'r':{}, 's':{}, 't':{}, 'u':{}, 'v':{}, 'w':{}, 'x':{}, 
+         'y':{}, 'z':{}}
+    return D
 
 def nestedDictionary3D(L1, L2):
     """
@@ -99,7 +113,12 @@ def nestedDictionary3D(L1, L2):
               has keys of each item of list L2 and corresponding
               values of empty dictionaries. Returns the new dictionary D.
     """
-    return
+    D = {}
+    for item1 in L1:
+        D[item1] = {}
+        for item2 in L2:
+            D[item1][item2] = {}
+    return D
 
 def valueFrom3D(D, K1, K2, K3):
     """
@@ -111,7 +130,7 @@ def valueFrom3D(D, K1, K2, K3):
               with the innermost dictionary accessed using keys K1, K2, and K3,
               in that order.
     """
-    return
+    return D[K1][K2][K3]
 
 def keysIn2D(D, L1, L2):
     """
@@ -122,14 +141,19 @@ def keysIn2D(D, L1, L2):
               is associated with a dictionary that contains the last
               item of list L2 as a key.
     """
-    return
+    if L1[len(L1)-1] in D and L2[len(L2)-1] in D[L1[len(L1)-1]]:
+    return True
+    else:
+    return False
 
 def newCopy(L1):
     """Function 13.
     Given a List L1, return a tuple of (L1, L2) where L2 is an exact copy of L1
     but with this appended value: 183
     """
-    return
+    L2 = L1[:]
+    L2.append(183)
+    return (L1, L2)
 
 
 # -----------------------------------------------------------------------------
